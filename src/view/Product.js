@@ -25,7 +25,6 @@ export default class Product extends Component {
         <Link to={`${match.path}/3`}> 产品3</Link>|
 
         <hr/>
-
         <Route path={`${match.path}/:id`} component={ProductDetail}></Route>
         <hr/>
 

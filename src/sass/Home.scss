@@ -1,0 +1,221 @@
+
+
+.header {
+  height: 25px;
+  width: 100%;
+  font-size: 14px;
+  background-color: #f4f4f4;
+  color: #666666;
+  .header-wrap {
+    height: 100%;
+    width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    .header-left {
+      float: left;
+      div {
+        float: left;
+        width: 120px;
+        text-align: center;
+      }
+    }
+    .header-right {
+      float: right;
+      ul {
+        margin: 0px;
+        padding: 0px;
+        li {
+          display: inline-block;
+          padding: 0 5px;
+          width: 90px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+
+.content {
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  .navbar-a {
+   width: 100%;
+   background-color: #eee;
+  border: 1px solid lightblue;
+  overflow: hidden;
+    .navbar-b{
+      float: left;
+      @media screen  and (max-width:768px){
+        width: 100%;
+        }
+      img{
+        width:100px;
+        margin-left:20px;
+       
+      }
+
+     
+    }
+    .navbar-m{
+      width: 100%;
+      .navbar-s{
+        float: left;
+        margin-left:2rem;
+      ul{
+        margin:0rem;
+        padding: 0em;
+        li{
+          float: left;
+          height: 100%;
+          padding: 0 2em;
+          @media screen  and (max-width:768px){
+            width: 100%;
+            }
+        }
+
+      }
+        .navbar-i{
+          height: 5em;
+          line-height: 5em;
+        }
+      }
+      a{
+        color: #999;
+      }
+      .navbar-s li:hover,.navbar-s li:hover a{
+        background-color:#ddd;
+        color:lightyellow;
+      }
+
+
+      .navbar-e {
+        float: right;
+        align-items: center;
+       
+        margin:1.5em 1.5em;
+        @media screen  and (max-width:768px){
+          width: 100%;
+          
+          }
+
+        .button{
+          font-size: 14px;
+          @media screen  and (max-width:768px){
+            margin-left: 5em;
+            }
+        }
+      }
+      
+    }
+  }
+  .columns {
+    margin-bottom: 0px;
+    border: 1px solid lightblue;
+  }
+ 
+  .main {
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  ul{
+    margin: 1em auto;
+  }
+}
+
+.main-wrap {
+  width: 1200px;
+  height: 540px;
+  .main-left{
+    .navbar-item{
+      padding:0 3em;
+      line-height: 4.8em;
+    }
+  }
+  @media screen  and (max-width:768px){
+    height: 858px;
+    .main-left{
+      .navbar-item{
+        padding:0 3em;
+        line-height: 3em;
+      }
+    }
+    .main-right{
+      width: 100%;
+    }
+  }
+  margin: 0 auto;
+  box-sizing: border-box;
+  
+.columns{
+    margin:0 auto;
+    width: 1200px;
+    box-sizing: border-box;
+
+}
+  main {
+    overflow: hidden;
+    display: flexbox;
+    height: 100%;
+
+    .main-left {
+      flex: 1;
+    }
+    .main-right {
+      flex: 4;
+      background:url("https://dimg04.c-ctrip.com/images/700513000000ug4fq46DD_1920_340_17.jpg") no-repeat  ;
+      background-size: cover;
+
+      .title{
+        position: relative;
+        z-index: 10;
+        .slide{
+          position: absolute;
+          left: -0.5em;
+          right: 10px;
+          top: 40px;
+          bottom: 0;
+          height: 490px;
+          width: 950px;
+          @media screen  and (max-width:768px){
+            height: 245px;
+            width: 475px;
+          }
+        }
+      }
+    }
+  }
+  .accordion{
+    max-width: 1200px;
+    box-sizing: border-box;
+
+    height: 100%;
+    margin: 0 auto;
+  }
+}
+
+.footer {
+  height: 100%;
+  width: 100%;
+  padding: 3rem 1.5rem 3rem;
+  .copy {
+    left:100px;
+    height: 16px;
+    width: 100%;
+    line-height: 16px;
+    color: #fff;
+    background-color: #666;
+    margin: 10px auto;
+    text-align: center;
+    margin-top: 40px;
+    span {
+      line-height: 10px;
+    }
+  }
+}
+
+ 

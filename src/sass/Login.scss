@@ -1,0 +1,25 @@
+html,body{
+    height: 100%;
+    // background: #fe0 url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556092003270&di=5099d65695e959d6b0f5e4300e5fa55e&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01ee04582e9e5ea84a0d304f90b0fa.gif") no-repeat fixed top;
+    background: #fe0 url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556092321900&di=7ca585579ffee9b2c8f4efe0bfd32216&imgtype=0&src=http%3A%2F%2Fattach.bbs.miui.com%2Fforum%2F201309%2F13%2F095343mc8dhgc1pc2d2ggk.jpg") no-repeat fixed top;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#loginWrap{
+    width: 170px;
+    height: 50px;
+    background-color: #fff;
+    transform: translateY(400px);
+    text-align: center;
+    margin: 0px auto;
+    overflow: hidden;
+    border-radius: 5px;
+}
+#btnLogin{
+    display: inline-block;
+    height: 50px;
+    width: 170px;
+    text-align: center;
+    font: 500 20px/20px "Microsoft YaHei",arial,sans-serif;
+    letter-spacing: 5px;
+}

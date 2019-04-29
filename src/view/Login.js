@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "../sass/Login.scss";
 
 class Login extends Component {
     loginClick=()=>{
@@ -12,16 +13,16 @@ class Login extends Component {
         }else{
             this.props.history.push("/app")
         }
-
+        window.location.reload();
     }
-    render() {
+
+     render() {
         return (
-            <div>
-                Login
+            <div id="loginWrap">
                 <hr/>
-                <button 
+                <button id="btnLogin"
                 onClick = {this.loginClick}
-                className="button is-primary">登录</button>
+                className="button is-info">登录首页</button>
             </div>
         );
     }

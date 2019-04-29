@@ -5,6 +5,8 @@
   "dependencies": {
     "antd": "^3.16.4",
     "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
+    "jQuery": "^1.7.4",
     "node-sass": "^4.11.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -28,5 +30,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "main": "index.js",
+  "repository": "git@github.com:xzzxqinlihui/firstNet.git",
+  "author": "xzzxqinlihui <931711373@qq.com>",
+  "license": "MIT"
 }

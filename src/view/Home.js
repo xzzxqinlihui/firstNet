@@ -1,28 +1,29 @@
 import React, { Component } from 'react';
 import { Prompt, Link, Route, Switch } from 'react-router-dom';
 import Logo from '../assets/logo.svg';
-
+//在头文件中引入 这里就可以不用引入了
+// import "../sass/Home.scss";
+// import "../index.scss";
 import About from './About.js';
 import Product from './Product.js';
-import Count from "./Count.js";
-import NewCount from "./NewCount.js";
-import store from "../store";
-import UserList from "./UserList";
-import UserListjsonserver from "./UserListjsonserver";
-import UserListThunk from "./UserListThunk";
-import NewUserList from "./NewUserList.js";
+import Count from './Count.js';
+import store from '../store';
+import UserList from './UserList.js';
+import Foot from './Foot.js';
+import Accordion from './Accordion.js';
+import Lunbotu from './Lunbotu.js';
 
 export default class Home extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      Num:store.getState().Num
-    }
+      Num: store.getState().Num
+    };
 
-    store.subscribe(()=>{
+    store.subscribe(() => {
       this.setState({
-        Num:store.getState().Num
-      })
+        Num: store.getState().Num
+      });
     });
   }
 
@@ -34,117 +35,123 @@ export default class Home extends Component {
   render() {
     let { match } = this.props;
     return (
-      <div>
-        Home!!!
+      <div className="content">
+        <header className="header">
+          <div className="header-wrap">
+            <div className="header-left">
+              <div>学前端更容易</div>
+              <div>LANGUAGE</div>
+            </div>
+            <div className="header-right">
+              <ul>
+                <li>
+                  <a href="http://www.baidu.com">您好,请登录</a>
+                </li>
+                |<li>消息</li>|<li>我的学习</li>|<li>我的课程</li>|
+                <li>客服中心</li>|<li>微信手机</li>
+              </ul>
+            </div>
+          </div>
+        </header>
         {/* 网站顶部导航区域 */}
-        <nav className="navbar">
-          <div className="navbar-band">
+
+
+        <nav className="navbar-a">
+          <div className="navbar-b">
             <Link to="/app">
-              <img
-                src={Logo}
-                alt="官网图片"
-                width="130px"
-                title="有利于网站的SEO"
-              />
+              <img src={Logo} alt="官网图片" title="秦立辉个人网站" />
             </Link>
           </div>
-          <div className="navbar-menu">
-            <div className="navbar-start">
-              <Link className="navbar-item" to="/app">
+          <div className="navbar-m">
+            <div className="navbar-s">
+              <ul>
+              <li><Link className="navbar-i" to="/app">
                 首页
-              </Link>
-              <Link className="navbar-item" to={`${match.path}/product`}>
+              </Link></li>
+              <li><Link className="navbar-i" to={`${match.path}/product`}>
                 产品
-              </Link>
-              <Link className="navbar-item" to={`${match.path}/cases`}>
+              </Link></li>
+              <li><Link className="navbar-i" to={`${match.path}/cases`}>
                 成功案例
-              </Link>
-              <Link className="navbar-item" to={`${match.path}/about`}>
+              </Link></li>
+              <li><Link className="navbar-i" to={`${match.path}/about`}>
                 关于
-              </Link>
+              </Link></li>
+              <li><Link className="navbar-i" to={`${match.path}/userlist`}>
+              用户管理列表
+            </Link></li>
+              </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-e">
               <button onClick={this.logout} className="button is-danger">
-                登出
+                退出
               </button>
             </div>
           </div>
         </nav>
+
         <hr />
         {/* 网站主要内容区域 */}
-        <main className="columns" style={{ height: '100%' }}>
-          <div className="menu-list column is-one-fifth has-background-info">
-          <br/>
+        <div className="main-wrap">
+          <main className="columns">
+            <aside className="main-left menu-list column is-one-fifth has-background-success">
+              <br />
+              <Link className="navbar-item" to="/app">
+                首页
+              </Link>
+              <br />
+              <Link className="navbar-item" to={`${match.path}/product`}>
+                产品
+              </Link>
+              <br />
+              <Link className="navbar-item" to={`${match.path}/count`}>
+                count
+              </Link>
+              <br />
+              <Link className="navbar-item" to={`${match.path}/cases`}>
+                成功案例
+              </Link>
+              <br />
+              <Link className="navbar-item" to={`${match.path}/about`}>
+                关于
+              </Link>
+              <br />
 
-            <Link className="navbar-item" to="/app">
-              首页
-            </Link>
-            <br/>
-
-            <Link className="navbar-item" to={`${match.path}/product`}>
-              产品
-            </Link>
-            <br/>
-            <Link className="navbar-item" to={`${match.path}/count`}>
-              count
-            </Link>
-            <br/>
-
-            <Link className="navbar-item" to={`${match.path}/cases`}>
-              成功案例
-            </Link>
-            <br/>
-            <Link className="navbar-item" to={`${match.path}/about`}>
-              关于
-            </Link>
-            <Link className="navbar-item" to={`${match.path}/userlist`}>
-              用户管理列表
-            </Link>
-            <Link className="navbar-item" to={`${match.path}/userlistjsonserver`}>
-              json-server用户管理列表
-            </Link>
-            <Link className="navbar-item" to={`${match.path}/userlistthunk`}>
-            UserListThunk用户管理列表
-            </Link>
-            <Link className="navbar-item" to={`${match.path}/newcount`}>
-              NewCount
-            </Link>
-            <Link className="navbar-item" to={`${match.path}/newuserlist`}>
-              New用户列表管理
-            </Link>
-            <br/>
-          </div>
-          <div className=" column  has-background-primary">
-            <Switch>
-              <Route path={`${match.path}/about`} component={About} />
-              <Route path={`${match.path}/product`} component={Product} />
-              <Route path={`${match.path}/count`} component={Count} />
-              <Route path={`${match.path}/userlist`} component={UserList} />
-              <Route path={`${match.path}/userlistjsonserver`} component={UserListjsonserver} />
-              <Route path={`${match.path}/userlistthunk`} component={UserListThunk} />
-              <Route path={`${match.path}/newcount`} component={NewCount} />
-              <Route path={`${match.path}/newuserlist`} component={NewUserList} />
-
-              <Route
-                render={() => {
-                  return (
-                    <div className="title">
-                      <h3>欢迎你访问网站</h3>
-                      <p className="subtitle">您的访问是我们荣幸</p>
-                    </div>
-                  );
-                }}
-              />
-            </Switch>
-          </div>
-        </main>
-        <div className="footer has-background-light" >
-        
-                版权所有@qinlihui.cn  =={this.state.Num}==
+              <Link className="navbar-item" to={`${match.path}/userlist`}>
+                用户管理列表
+              </Link>
+              <br />
+            </aside>
+            <div className="main-right column has-background-info">
+              <Switch>
+                <Route path={`${match.path}/about`} component={About} />
+                <Route path={`${match.path}/product`} component={Product} />
+                <Route path={`${match.path}/count`} component={Count} />
+                <Route path={`${match.path}/userlist`} component={UserList} />
+                <Route
+                  render={() => {
+                    return (
+                      <div className="title">
+                        <h6>欢迎你访问网站</h6>
+                        <Lunbotu className="slide" />
+                      </div>
+                    );
+                  }}
+                />
+              </Switch>
+            </div>
+          </main>
+        </div>
+        <div className="accordion">
+          <Accordion />
         </div>
 
-
-
+        <footer className="footer">
+          <Foot />
+          <div className="copy">
+            <p>版权所有@qinlihui.cn =={this.state.Num}==</p>
+          </div>
+        </footer>
 
         {/* <Prompt message="您确定要离开吗？"></Prompt> */}
         <Prompt

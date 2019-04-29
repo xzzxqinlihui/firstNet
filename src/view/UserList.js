@@ -3,6 +3,7 @@ import axios from 'axios';
 import store from "../store/index.js";
 import { UserListActionCreators } from "../actions/UserListAction.js"
 import {Popconfirm} from "antd";
+import "../sass/UserList.scss";
 
 export default class UserList extends Component {
   constructor(props) {
@@ -41,8 +42,8 @@ export default class UserList extends Component {
 
   render() {
     return <div>
-      <h3 className="title">用户列表</h3>
-      <table className="table is-striped is-hoverable is-bordered">
+      <h3 className="title">用户列表案例</h3>
+      <table className="table is-striped is-hoverable is-bordered is-selected  is-narrow is-fullwidth">
         <thead>
             <tr><th>ID</th><th>用户名</th><th>地址</th><th>电话</th><th>删除标识</th><th>备注</th><th>编辑</th></tr>
         </thead>

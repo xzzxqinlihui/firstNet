@@ -7,36 +7,138 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- 设置关键字 -->
+    <meta name="keywords" content="秦立辉,个人网站,博客,前端,学习" />
+    <!-- 设置描述信息 不超过150字 -->
+    <meta
+      name="description"
+      content="秦立辉,热爱前端与编程。目前研二，这是我的前端个人网站"
+    />
+    <meta name="robots" content="index,follow" />
+    <!-- <meta http-equiv="refresh" content="60;URL=" /> -->
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta name="author" content="秦立辉,931711373@qq.com" />
     <meta name="theme-color" content="#000000" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <title>秦立辉个人网站</title>
+    <link
+      href="https://cdn.bootcss.com/bulma/0.7.4/css/bulma.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../src/index.scss" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-    <link href="https://cdn.bootcss.com/bulma/0.7.4/css/bulma.css" rel="stylesheet">
+    <script src="http://www.jsdaima.com/Upload/1427378813/jquery-1.9.1.min.js"></script>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+ 
+<!-- 可选的Bootstrap主题文件（一般不使用） -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script>
+ 
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+ 
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <script>
+      (function() {
+        window.onload = function() {
+          var slideMenu = (function() {
+            var sp, st, t, m, sa, l, w, gw, ot;
+            return {
+              destruct: function() {
+                if (m) {
+                  clearInterval(m.htimer);
+                  clearInterval(m.timer);
+                }
+              },
+              build: function(sm, sw, mt, s, sl, h) {
+                sp = s;
+                st = sw;
+                t = mt;
+                m = document.getElementById(sm);
+                sa = m.getElementsByTagName('li');
+                l = sa.length;
+                w = m.offsetWidth;
+                gw = w / l;
+                ot = Math.floor((w - st) / (l - 1));
+                var i = 0;
+                for (i; i < l; i++) {
+                  s = sa[i];
+                  s.style.width = gw + 'px';
+                  this.timer(s);
+                }
+                if (sl != null) {
+                  m.timer = setInterval(function() {
+                    slideMenu.slide(sa[sl - 1]);
+                  }, t);
+                }
+              },
+              timer: function(s) {
+                s.onmouseover = function() {
+                  clearInterval(m.htimer);
+                  clearInterval(m.timer);
+                  m.timer = setInterval(function() {
+                    slideMenu.slide(s);
+                  }, t);
+                  $(this)
+                    .find('.mask_b')
+                    .hide();
+                };
+                s.onmouseout = function() {
+                  clearInterval(m.timer);
+                  clearInterval(m.htimer);
+                  m.htimer = setInterval(function() {
+                    slideMenu.slide(s, true);
+                  }, t);
+                  $(this)
+                    .find('.mask_b')
+                    .show();
+                };
+              },
+              slide: function(s, c) {
+                var cw = parseInt(s.style.width);
+                if ((cw < st && !c) || (cw > gw && c)) {
+                  var owt = 0;
+                  var i = 0;
+                  for (i; i < l; i++) {
+                    if (sa[i] !== s) {
+                      var o, ow;
+                      var oi = 0;
+                      o = sa[i];
+                      ow = parseInt(o.style.width);
+                      if (ow < gw && c) {
+                        oi = Math.floor((gw - ow) / sp);
+                        oi = oi > 0 ? oi : 1;
+                        o.style.width = ow + oi + 'px';
+                      } else if (ow > ot && !c) {
+                        oi = Math.floor((ow - ot) / sp);
+                        oi = oi > 0 ? oi : 1;
+                        o.style.width = ow - oi + 'px';
+                      }
+                      if (c) {
+                        owt = owt + (ow + oi);
+                      } else {
+                        owt = owt + (ow - oi);
+                      }
+                    }
+                  }
+                  s.style.width = w - owt + 'px';
+                } else {
+                  if (m.htimer) clearInterval(m.htimer);
+                  if (m.timer) clearInterval(m.timer);
+                }
+              }
+            };
+          })();
+          slideMenu.build('sm', 400, 10, 10, 1);
+        };
+      })();
+    </script>
   </body>
 </html>
