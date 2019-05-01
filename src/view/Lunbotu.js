@@ -4,46 +4,46 @@ export default class Lunbotu extends Component {
   render() {
     return (
       
-        <div id="myCarousel" class="carousel slide">
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active" />
+        <div id="myCarousel" className="carousel slide">
+          <ol className="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" className="active" />
             <li data-target="#myCarousel" data-slide-to="1" />
             <li data-target="#myCarousel" data-slide-to="2" />
           </ol>
-          <div class="carousel-inner">
-            <div class="item active">
+          <div className="carousel-inner">
+            <div className="item active">
               <img src="http://gtd.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/https://img.alicdn.com/tfscom/TB1r.4eXSCWBuNjy0FhSuv6EVXa_600x600.jpg" alt="First slide" />
-              <div class="carousel-caption">上海</div>
+              <div className="carousel-caption">上海</div>
             </div>
-            <div class="item">
+            <div className="item">
               <img src="//gtd.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/https://img.alicdn.com/tfscom/TB1hqtoXKuSBuNjSsziSuvq8pXa_600x600.jpg" alt="Second slide" />
-              <div class="carousel-caption">新加坡</div>
+              <div className="carousel-caption">新加坡</div>
             </div>
-            <div class="item">
+            <div className="item">
               <img src="http://gtd.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/i2/170060263390977302/TB24u.YtVXXXXXmXpXXXXXXXXXX_!!0-travel.jpg_600x600.jpg" alt="Third slide" />
-              <div class="carousel-caption">上海科技馆</div>
+              <div className="carousel-caption">上海科技馆</div>
             </div>
           </div>
           <a
-            class="left carousel-control"
+            className="left carousel-control"
             href="#myCarousel"
             role="button"
             data-slide="prev"
           >
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" />
-            <span class="sr-only">Previous</span>
+            <span className="glyphicon glyphicon-chevron-left" aria-hidden="true" />
+            <span className="sr-only">Previous</span>
           </a>
           <a
-            class="right carousel-control"
+            className="right carousel-control"
             href="#myCarousel"
             role="button"
             data-slide="next"
           >
             <span
-              class="glyphicon glyphicon-chevron-right"
+              className="glyphicon glyphicon-chevron-right"
               aria-hidden="true"
             />
-            <span class="sr-only">Next</span>
+            <span className="sr-only">Next</span>
           </a>
         </div>
      

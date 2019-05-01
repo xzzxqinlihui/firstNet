@@ -41,7 +41,7 @@ export default class UserList extends Component {
 
 
   render() {
-    return <div>
+    return <div class="userlist">
       <h3 className="title">用户列表案例</h3>
       <table className="table is-striped is-hoverable is-bordered is-selected  is-narrow is-fullwidth">
         <thead>
